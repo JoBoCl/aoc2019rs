@@ -1,3 +1,6 @@
+#![feature(test)]
+extern crate test;
+
 use std::{collections::HashMap, num::ParseIntError};
 
 pub fn add(left: usize, right: usize) -> usize { left + right }
@@ -195,26 +198,43 @@ impl IntCode {
 
 #[cfg(test)]
 mod tests {
-  use std::error::Error;
-
   use super::*;
 
   macro_rules! simple_tests {
     ($($name:ident: $value:expr,)*) => {
+      mod tests {
       $(
         #[test]
         fn $name() {
             let (input, expected) = $value;
-            let mut intcode = IntCode::try_from(&input.to_string()).unwrap();
+            let mut intcode = super::IntCode::try_from(&input.to_string()).unwrap();
             while !intcode.finished() {
               let _ = intcode.execute().map_err(|e| std::io::Error::other(e)).unwrap();
             }
             assert_eq!(intcode.register_zero(), expected);
         }
+
+
+      )*
+      }
+
+      mod benches {
+      use test::Bencher;
+      $(
+        #[bench] fn $name (b: &mut Bencher) {
+            let (input, _) = $value;
+            let ic = super::IntCode::try_from(&input.to_string()).unwrap();
+            b.iter(||  {
+              let mut intcode = ic.clone();
+            while !intcode.finished() {
+              let _ = intcode.execute().map_err(|e| std::io::Error::other(e)).unwrap();
+            }
+          });
+        }
       )*
       }
     }
-
+    }
   simple_tests! {
     day_02_1: ("1,9,10,3,2,3,11,0,99,30,40,50", 3500),
     day_02_2: ("1,0,0,0,99", 2),
