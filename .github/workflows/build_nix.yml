@@ -1,0 +1,36 @@
+name: "Build legacy Nix package on Ubuntu"
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v12
+      - name: Building package
+        run: nix-build -A outputs.packages.x86_64-linux
+      - name: Install latest nightly
+        uses: actions-rs/toolchain@v1
+        with:
+            toolchain: nightly
+            override: true
+            components: rustfmt, clippy
+      - uses: workflow/nix-shell-action@v3
+        with: 
+          script: |
+            for f in $(find . -name Cargo.toml -printf '%h\n' | sort -u); do
+              pushd $f > /dev/null;
+              cargo test;
+              popd > /dev/null;
+            done
+      - uses: workflow/nix-shell-action@v3
+        with:
+          script: |
+            for f in $(find . -name Cargo.toml -printf '%h\n' | sort -u); do
+              pushd $f > /dev/null;
+              cargo bench;
+              popd > /dev/null;
+            done
+    
