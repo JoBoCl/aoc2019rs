@@ -4,9 +4,9 @@ version = 3
 
 [[package]]
 name = "anstream"
-version = "0.6.4"
+version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2ab91ebe16eb252986481c5b62f6098f3b698a45e34b5b98200cf20dd2484a44"
+checksum = "d664a92ecae85fd0a7392615844904654d1d5f5514837f471ddef4a057aba1b6"
 dependencies = [
  "anstyle",
  "anstyle-parse",
@@ -33,9 +33,9 @@ dependencies = [
 
 [[package]]
 name = "anstyle-query"
-version = "1.0.1"
+version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a3a318f1f38d2418400f8209655bfd825785afd25aa30bb7ba6cc792e4596748"
+checksum = "e28923312444cdd728e4738b3f9c9cac739500909bb3d3c94b43551b16517648"
 dependencies = [
  "windows-sys",
 ]
@@ -57,6 +57,7 @@ dependencies = [
  "clap",
  "day00",
  "day01",
+ "day02",
  "read",
  "solver",
 ]
@@ -122,10 +123,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "day02"
+version = "0.1.0"
+dependencies = [
+ "intcode",
+ "solver",
+]
+
+[[package]]
 name = "heck"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
+
+[[package]]
+name = "intcode"
+version = "0.1.0"
 
 [[package]]
 name = "proc-macro2"
@@ -156,7 +169,7 @@ dependencies = [
 [[package]]
 name = "solver"
 version = "0.1.0"
-source = "git+https://github.com/JoBoCl/solver#1c4f204c7918bc76d64bd7333c85bd1b8d04be6f"
+source = "git+https://github.com/JoBoCl/solver#54224c5ad48bbdefb700621775a60af5481d4ef4"
 
 [[package]]
 name = "strsim"

@@ -14,14 +14,14 @@ impl Day00 {
 }
 
 impl Solver for Day00 {
-  fn part_one(&self) -> std::io::Result<String> {
+  fn part_one(&mut self) -> std::io::Result<String> {
     Err(std::io::Error::new(
       std::io::ErrorKind::Other,
       "Not Implemented yet",
     ))
   }
 
-  fn part_two(&self) -> std::io::Result<String> {
+  fn part_two(&mut self) -> std::io::Result<String> {
     Err(std::io::Error::new(
       std::io::ErrorKind::Other,
       "Not Implemented yet",
@@ -41,7 +41,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day00::try_create(Box::new(input)).unwrap();
+    let mut solver = Day00::try_create(Box::new(input)).unwrap();
     assert! {solver.part_one().is_err()};
     Ok(())
   }
@@ -52,7 +52,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day00::try_create(Box::new(input)).unwrap();
+    let mut solver = Day00::try_create(Box::new(input)).unwrap();
     assert! {solver.part_two().is_err()};
     Ok(())
   }
@@ -63,7 +63,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day00::try_create(Box::new(input)).unwrap();
+    let mut solver = Day00::try_create(Box::new(input)).unwrap();
     assert! {solver.part_one().is_err()};
     assert! {solver.part_two().is_err()};
     Ok(())
@@ -86,7 +86,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day00::try_create(Box::new(input)).unwrap();
+    let mut solver = Day00::try_create(Box::new(input)).unwrap();
 
     b.iter(|| solver.part_one());
   }
@@ -97,7 +97,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day00::try_create(Box::new(input)).unwrap();
+    let mut solver = Day00::try_create(Box::new(input)).unwrap();
 
     b.iter(|| solver.part_two());
   }

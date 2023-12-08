@@ -1,4 +1,4 @@
-workspace = { members = ["day01"] }
+workspace = { members = ["day01", "day02", "intcode"] }
 [package]
 name = "aoc2019rs"
 version = "0.1.0"
@@ -10,5 +10,6 @@ edition = "2021"
 clap = "4.4.11"
 day00 = { version = "0.1.0", path = "day00" }
 day01 = { version = "0.1.0", path = "day01" }
+day02 = { version = "0.1.0", path = "day02" }
 read = { git = "https://github.com/JoBoCl/read", version = "0.1.0" }
 solver = { git = "https://github.com/JoBoCl/solver", version = "0.1.0" }

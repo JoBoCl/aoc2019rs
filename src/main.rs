@@ -17,10 +17,11 @@ impl read::HasFile for Args {
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
   let (input, flags) = read::input_with_type::<Args>(None);
-  let solver: Box<dyn Solver> = match flags.day {
+  let mut solver: Box<dyn Solver> = match flags.day {
     // BEGIN_SOLVER_LIST
     0 => day00::Day00::try_create(input),
     1 => day01::Day01::try_create(input),
+    2 => day02::Day02::try_create(input),
     // END_SOLVER_LIST
     _ => panic! {"Failed to find solver"},
   }?;

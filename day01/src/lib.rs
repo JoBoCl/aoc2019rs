@@ -35,7 +35,7 @@ fn calculate_fuel_recursively(weight: &usize) -> usize {
 }
 
 impl Solver for Day01 {
-  fn part_one(&self) -> std::io::Result<String> {
+  fn part_one(&mut self) -> std::io::Result<String> {
     Ok(
       self
         .fuel
@@ -46,7 +46,7 @@ impl Solver for Day01 {
     )
   }
 
-  fn part_two(&self) -> std::io::Result<String> {
+  fn part_two(&mut self) -> std::io::Result<String> {
     Ok(
       self
         .fuel
@@ -70,7 +70,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day01::try_create(Box::new(input)).unwrap();
+    let mut solver = Day01::try_create(Box::new(input)).unwrap();
     assert_eq! {solver.part_one()?, "34241"};
     Ok(())
   }
@@ -81,7 +81,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day01::try_create(Box::new(input)).unwrap();
+    let mut solver = Day01::try_create(Box::new(input)).unwrap();
     assert_eq! {solver.part_two()?, "51316"};
     Ok(())
   }
@@ -92,7 +92,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day01::try_create(Box::new(input)).unwrap();
+    let mut solver = Day01::try_create(Box::new(input)).unwrap();
     assert_eq! {solver.part_one()?, "3416712"};
     assert_eq! {solver.part_two()?, "5122170"};
     Ok(())
@@ -115,7 +115,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day01::try_create(Box::new(input)).unwrap();
+    let mut solver = Day01::try_create(Box::new(input)).unwrap();
 
     b.iter(|| solver.part_one());
   }
@@ -126,7 +126,7 @@ mod tests {
       .lines()
       .map(String::from);
 
-    let solver = Day01::try_create(Box::new(input)).unwrap();
+    let mut solver = Day01::try_create(Box::new(input)).unwrap();
 
     b.iter(|| solver.part_two());
   }
