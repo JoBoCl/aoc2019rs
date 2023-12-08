@@ -1,14 +1,9 @@
-workspace = { members = ["day01"] }
 [package]
-name = "aoc2019rs"
+name = "day01"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-clap = "4.4.11"
-day00 = { version = "0.1.0", path = "day00" }
-day01 = { version = "0.1.0", path = "day01" }
-read = { git = "https://github.com/JoBoCl/read", version = "0.1.0" }
 solver = { git = "https://github.com/JoBoCl/solver", version = "0.1.0" }
