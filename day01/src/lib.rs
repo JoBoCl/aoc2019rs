@@ -35,7 +35,7 @@ fn calculate_fuel_recursively(weight: &usize) -> usize {
 }
 
 impl Solver for Day01 {
-  fn part_one(&mut self) -> std::io::Result<String> {
+  fn part_one(&self) -> std::io::Result<String> {
     Ok(
       self
         .fuel
@@ -46,7 +46,7 @@ impl Solver for Day01 {
     )
   }
 
-  fn part_two(&mut self) -> std::io::Result<String> {
+  fn part_two(&self) -> std::io::Result<String> {
     Ok(
       self
         .fuel

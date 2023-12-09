@@ -19,7 +19,7 @@ impl Day02 {
 }
 
 impl Solver for Day02 {
-  fn part_one(&mut self) -> std::io::Result<String> {
+  fn part_one(&self) -> std::io::Result<String> {
     let mut intcode = self.intcode.clone();
     let mut mutations: HashMap<usize, i32> = HashMap::new();
     mutations.insert(1, 12);
@@ -31,7 +31,7 @@ impl Solver for Day02 {
     Ok(intcode.register_zero().to_string())
   }
 
-  fn part_two(&mut self) -> std::io::Result<String> {
+  fn part_two(&self) -> std::io::Result<String> {
     for noun in 0..100 {
       for verb in 0..100 {
         let mut intcode = self.intcode.clone();

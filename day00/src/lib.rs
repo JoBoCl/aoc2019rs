@@ -14,14 +14,14 @@ impl Day00 {
 }
 
 impl Solver for Day00 {
-  fn part_one(&mut self) -> std::io::Result<String> {
+  fn part_one(&self) -> std::io::Result<String> {
     Err(std::io::Error::new(
       std::io::ErrorKind::Other,
       "Not Implemented yet",
     ))
   }
 
-  fn part_two(&mut self) -> std::io::Result<String> {
+  fn part_two(&self) -> std::io::Result<String> {
     Err(std::io::Error::new(
       std::io::ErrorKind::Other,
       "Not Implemented yet",

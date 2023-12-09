@@ -169,7 +169,7 @@ dependencies = [
 [[package]]
 name = "solver"
 version = "0.1.0"
-source = "git+https://github.com/JoBoCl/solver#54224c5ad48bbdefb700621775a60af5481d4ef4"
+source = "git+https://github.com/JoBoCl/solver#3777480febb8005ff9e3b8f3f14b4c4ce88f71cf"
 
 [[package]]
 name = "strsim"
